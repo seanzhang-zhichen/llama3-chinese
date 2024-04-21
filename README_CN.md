@@ -1,5 +1,5 @@
 <p align="left">
-    <a href="README_CN.md">中文</a>&nbsp ｜ &nbspEnglish
+    中文</a>&nbsp ｜ &nbsp<a href="README.md">English</a>
 </p>
 <br><br>
 
@@ -30,38 +30,38 @@
 </p>
 </div>
 
-## Introduce
 
-**Llama3-Chinese** is a large model trained on 500k high-quality Chinese multi-turn SFT data, 100k English multi-turn SFT data, and 2k single-turn self-cognition data, using the training methods of [DORA](https://arxiv.org/pdf/2402.09353.pdf) and [LORA+](https://arxiv.org/pdf/2402.12354.pdf) based on **Meta-Llama-3-8B** as the base.
+## 介绍
+
+**Llama3-Chinese**是**以Meta-Llama-3-8B为底座**，使用 [DORA](https://arxiv.org/pdf/2402.09353.pdf) + [LORA+](https://arxiv.org/pdf/2402.12354.pdf) 的训练方法，在50w高质量中文多轮SFT数据 + 10w英文多轮SFT数据 + 2000单轮自我认知数据训练而来的大模型。
 
 ![DEMO](./images/vllm_web_demo.png)
 
 
-## Download Model
-
+## 模型下载
 
 | Model             | Download  |
 |:-------------------:|:-----------:|
 | Meta-Llama-3-8B        |[ 🤗 HuggingFace](https://huggingface.co/meta-llama/Meta-Llama-3-8B) [  🤖 ModelScope](https://modelscope.cn/models/LLM-Research/Meta-Llama-3-8B)|
 | Llama3-Chinese-Lora           |[ 🤗 HuggingFace](https://huggingface.co/zhichen/Llama3-Chinese-Lora) [  🤖 ModelScope](https://modelscope.cn/models/seanzhang/Llama3-Chinese-Lora)|
-| Llama3-Chinese (merged model)           |[ 🤗 HuggingFace](https://huggingface.co/zhichen/Llama3-Chinese) [  🤖 ModelScope](https://modelscope.cn/models/seanzhang/Llama3-Chinese)|
+| Llama3-Chinese (合并好的模型)           |[ 🤗 HuggingFace](https://huggingface.co/zhichen/Llama3-Chinese) [  🤖 ModelScope](https://modelscope.cn/models/seanzhang/Llama3-Chinese)|
 
 
-## Merge LORA Model (Skippable)
 
-1、Download [Meta-Llama-3-8B](https://modelscope.cn/models/LLM-Research/Meta-Llama-3-8B)
+## 合并LORA模型（可跳过）
+
+1、下载 [Meta-Llama-3-8B](https://modelscope.cn/models/LLM-Research/Meta-Llama-3-8B)
 
 ```bash
 git clone https://www.modelscope.cn/LLM-Research/Meta-Llama-3-8B.git
 ```
 
-2、Download [Llama3-Chinese-Lora](https://www.modelscope.cn/models/seanzhang/Llama3-Chinese-Lora)
+2、下载[Llama3-Chinese-Lora](https://www.modelscope.cn/models/seanzhang/Llama3-Chinese-Lora)
 
 **From ModelScope**
 ```bash
 git lfs install
 git clone https://www.modelscope.cn/seanzhang/Llama3-Chinese-Lora.git
-
 ```
 
 **From HuggingFace**
@@ -70,7 +70,7 @@ git lfs install
 git clone https://huggingface.co/zhichen/Llama3-Chinese-Lora
 ```
 
-3、Merge Model
+3、合并模型
 
 ```bash
 python merge_lora.py \
@@ -79,8 +79,7 @@ python merge_lora.py \
     --output_dir ./Llama3-Chinese
 ```
 
-
-## Download Llama3-Chinese (Merged Model)
+## 下载 Llama3-Chinese（合并好的模型）
 
 **From ModelScope**
 ```bash
@@ -95,36 +94,39 @@ git clone https://huggingface.co/zhichen/Llama3-Chinese
 ```
 
 
-## VLLM WEB DEMO
 
-1、Use [vllm](https://github.com/vllm-project/vllm) deploy model
+
+## vllm web 推理
+
+1、使用[vllm](https://github.com/vllm-project/vllm)部署模型
 
 ```bash
-python -m vllm.entrypoints.openai.api_server --served-model-name Llama3-Chinese --model ./Llama3-Chinese(Replace it with your own merged model path)
+python -m vllm.entrypoints.openai.api_server --served-model-name Llama3-Chinese --model ./Llama3-Chinese(换成你自己的合并后的模型路径)
 ```
 
-2、This command is executed on the CLI
+2、在命令行执行
 
 ```bash
 python vllm_web_demo.py --model Llama3-Chinese
 ```
 
-## Train Dataset
 
-[deepctrl-sft-data](https://modelscope.cn/datasets/deepctrl/deepctrl-sft-data)
+
+
+## 训练数据集
+
+[匠数科技大模型sft数据集](https://modelscope.cn/datasets/deepctrl/deepctrl-sft-data)
 
 
 ## LICENSE
 
-This project can only be used for research purposes, and the project developer shall not bear any harm or loss caused by the use of this project (including but not limited to data, models, codes, etc.). For details, please refer to [DISCLAIMER](https://github.com/seanzhang-zhichen/Llama3-Chinese/blob/main/DISCLAIMER)。
+本项目仅可应用于研究目的，项目开发者不承担任何因使用本项目（包含但不限于数据、模型、代码等）导致的危害或损失。详细请参考[免责声明](https://github.com/seanzhang-zhichen/Llama3-Chinese/blob/main/DISCLAIMER)。
 
-The License agreement of the Llama3-Chinese project code is the [Apache License 2.0](./LICENSE). The code is free for commercial use, and the model weights and data can only be used for research purposes. Please attach a link to Llama3-Chinese and the licensing agreement in the product description.
-
+Llama3-Chinese项目代码的授权协议为 [The Apache License 2.0](./LICENSE)，代码可免费用做商业用途，模型权重和数据只能用于研究目的。请在产品说明中附加Llama3-Chinese的链接和授权协议。
 
 ## Citation
 
-If you used Llama3-Chinese in your research, cite it in the following format:
-
+如果你在研究中使用了Llama3-Chinese，请按如下格式引用：
 
 ```latex
 @misc{Llama3-Chinese,
@@ -135,6 +137,7 @@ If you used Llama3-Chinese in your research, cite it in the following format:
 }
 ```
 
+
 ## Acknowledgement
 
 [meta-llama/llama3](https://github.com/meta-llama/llama3)
@@ -142,6 +145,8 @@ If you used Llama3-Chinese in your research, cite it in the following format:
 [hiyouga/LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)
 
 
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=seanzhang-zhichen/Llama3-Chinese&type=Date)](https://star-history.com/#seanzhang-zhichen/Llama3-Chinese&Date)
+
