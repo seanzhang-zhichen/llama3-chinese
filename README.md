@@ -129,7 +129,7 @@ If you used Llama3-Chinese in your research, cite it in the following format:
 ```latex
 @misc{Llama3-Chinese,
   title={Llama3-Chinese},
-  author={Zhichen Zhang},
+  author={Zhichen Zhang, Xin LU, Long Chen},
   year={2024},
   howpublished={\url{https://github.com/seanzhang-zhichen/llama3-chinese}},
 }

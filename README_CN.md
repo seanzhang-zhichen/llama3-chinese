@@ -131,7 +131,7 @@ Llama3-Chinese项目代码的授权协议为 [The Apache License 2.0](./LICENSE)
 ```latex
 @misc{Llama3-Chinese,
   title={Llama3-Chinese},
-  author={Zhichen Zhang},
+  author={Zhichen Zhang, Xin LU, Long Chen},
   year={2024},
   howpublished={\url{https://github.com/seanzhang-zhichen/llama3-chinese}},
 }
