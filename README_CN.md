@@ -35,6 +35,8 @@
 
 **Llama3-Chinese**是**以Meta-Llama-3-8B为底座**，使用 [DORA](https://arxiv.org/pdf/2402.09353.pdf) + [LORA+](https://arxiv.org/pdf/2402.12354.pdf) 的训练方法，在50w高质量中文多轮SFT数据 + 10w英文多轮SFT数据 + 2000单轮自我认知数据训练而来的大模型。
 
+**Github:** [https://github.com/seanzhang-zhichen/llama3-chinese](https://github.com/seanzhang-zhichen/llama3-chinese)
+
 ![DEMO](./images/web_demo.png)
 
 
