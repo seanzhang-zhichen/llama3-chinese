@@ -34,7 +34,7 @@
 
 **Llama3-Chinese** is a large model trained on 500k high-quality Chinese multi-turn SFT data, 100k English multi-turn SFT data, and 2k single-turn self-cognition data, using the training methods of [DORA](https://arxiv.org/pdf/2402.09353.pdf) and [LORA+](https://arxiv.org/pdf/2402.12354.pdf) based on **Meta-Llama-3-8B** as the base.
 
-![DEMO](./images/vllm_web_demo.png)
+![DEMO](./images/web_demo.png)
 
 
 ## Download Model
